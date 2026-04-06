@@ -1,0 +1,135 @@
+.footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.top {
+  padding: 4rem 2rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.brand {
+  flex: 2;
+  min-width: 200px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.logoBracket {
+  color: var(--color-primary);
+}
+
+.tagline {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 280px;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socialLink {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all var(--transition);
+}
+
+.socialLink:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(108, 99, 255, 0.1);
+}
+
+.nav, .contact {
+  flex: 1;
+  min-width: 150px;
+}
+
+.navTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.navLink {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.bottom {
+  padding: 1.2rem 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.copy, .made {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .bottom .container {
+    justify-content: center;
+    text-align: center;
+  }
+}
