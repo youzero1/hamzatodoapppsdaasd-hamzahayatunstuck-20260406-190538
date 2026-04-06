@@ -1,0 +1,144 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.2rem 0;
+  transition: all var(--transition);
+}
+
+.scrolled {
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.8rem 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+}
+
+.logoBracket {
+  color: var(--color-primary);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.link {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color var(--transition);
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width var(--transition);
+}
+
+.link:hover {
+  color: var(--color-text);
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.ctaBtn {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.ctaBtn:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+}
+
+.menuBtn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.menuBtn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+.menuOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menuOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .menuBtn {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--color-surface);
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1.5rem;
+    transition: right var(--transition);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .linksOpen {
+    right: 0;
+  }
+}
